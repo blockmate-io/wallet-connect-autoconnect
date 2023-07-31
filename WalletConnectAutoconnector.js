@@ -1,7 +1,7 @@
 import SignClient from '@walletconnect/sign-client';
 
 class WalletConnectAutoconnector {
-	constructor(walletConnectProjectId, walletConnectRelayUrl = 'wss://relay.walletconnect.com') {
+	constructor(publicToken, walletConnectProjectId, walletConnectRelayUrl = 'wss://relay.walletconnect.com') {
 		this.walletConnectProjectId = walletConnectProjectId;
 		this.walletConnectRelayUrl = walletConnectRelayUrl;
 		this.client = undefined;
