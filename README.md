@@ -1,6 +1,7 @@
 # WalletConnect autoconnect
 
-A library for automatic detection for WalletConnect-connected sessions.
+A library for automatic detection of WalletConnect-connected sessions and connecting found addresses
+to Blockmate.
 
 ## Usage
 
@@ -8,7 +9,14 @@ A library for automatic detection for WalletConnect-connected sessions.
 import WalletConnectAutoconnector from 'wallet-connect-autoconnect';
 
 const WALLET_CONNECT_PROJECT_ID = '<your-walletconnect-project-id>';
-const autoconnector = new WalletConnectAutoconnector(WALLET_CONNECT_PROJECT_ID);
+const BLOCKMATE_PUBLIC_TOKEN = '<your-blockmate-public-token>';
+const BLOCKMATE_API_URL = 'https://api.blockmate.io';
+const autoconnector = new WalletConnectAutoconnector({
+    publicToken: BLOCKMATE_PUBLIC_TOKEN,
+    blockmateApiUrl: BLOCKMATE_API_URL,
+    walletConnectProjectId: WALLET_CONNECT_PROJECT_ID,
+});
 
-const connectedAccounts = await autoconnector.getConnectedAccounts();
+// const connectedAccounts = await autoconnector.getConnectedAccounts();
+await autoconnector.performConnect();
 ```
