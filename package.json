@@ -1,6 +1,7 @@
 {
   "name": "wallet-connect-autoconnect",
   "version": "1.0.0",
+  "type": "module",
   "description": "A library for automatic detection of WalletConnect-connected addresses.",
   "main": "WalletConnectAutoconnector.js",
   "scripts": {
