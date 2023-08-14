@@ -9,10 +9,10 @@ to Blockmate.
 import WalletConnectAutoconnector from 'wallet-connect-autoconnect';
 
 const WALLET_CONNECT_PROJECT_ID = '<your-walletconnect-project-id>';
-const BLOCKMATE_PUBLIC_TOKEN = '<your-blockmate-public-token>';
+const BLOCKMATE_PUBLIC_API_KEY = '<your-blockmate-public-api-key>';
 const BLOCKMATE_API_URL = 'https://api.blockmate.io';
 const autoconnector = new WalletConnectAutoconnector({
-    publicToken: BLOCKMATE_PUBLIC_TOKEN,
+    publicApiKey: BLOCKMATE_PUBLIC_API_KEY,
     blockmateApiUrl: BLOCKMATE_API_URL,
     walletConnectProjectId: WALLET_CONNECT_PROJECT_ID,
 });

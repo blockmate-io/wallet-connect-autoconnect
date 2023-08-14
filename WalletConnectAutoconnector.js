@@ -1,14 +1,14 @@
 import SignClient from '@walletconnect/sign-client';
-import {providerByChainId} from "./chainMap.js";
+import { providerByChainId } from "./chainMap.js";
 
 class WalletConnectAutoconnector {
 	constructor({
-		publicToken,
+		publicApiKey,
 		blockmateApiUrl,
 		walletConnectProjectId,
 		walletConnectRelayUrl = 'wss://relay.walletconnect.com'
 	}) {
-		this.publicToken = publicToken;
+		this.publicApiKey = publicApiKey;
 		this.blockmateApiUrl = blockmateApiUrl;
 		this.walletConnectProjectId = walletConnectProjectId;
 		this.walletConnectRelayUrl = walletConnectRelayUrl;
@@ -58,7 +58,7 @@ class WalletConnectAutoconnector {
 		const jwtResponse = await fetch(`${this.blockmateApiUrl}/v1/auth/public`, {
 			method: 'GET',
 			headers: {
-				'X-Api-Key': this.publicToken,
+				'X-Api-Key': this.publicApiKey,
 			}
 		});
 		const jwt = await jwtResponse.json();
